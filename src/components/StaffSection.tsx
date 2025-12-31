@@ -1,4 +1,5 @@
 import { Star, Award, Users } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import barber1Image from "@/assets/barber-1.jpg";
 import barber2Image from "@/assets/barber-2.jpg";
@@ -27,6 +28,8 @@ const staff = [
 ];
 
 const StaffSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="team" className="py-24 bg-card leather-texture">
       <div className="container mx-auto px-6">
@@ -103,7 +106,7 @@ const StaffSection = () => {
 
         <div className="text-center mt-12">
           <p className="text-muted-foreground mb-4">Want to choose your preferred barber?</p>
-          <Button variant="outline" size="lg">
+          <Button variant="outline" size="lg" onClick={() => navigate('/team')}>
             View All Team Members
           </Button>
         </div>

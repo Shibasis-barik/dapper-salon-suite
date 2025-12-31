@@ -34,14 +34,12 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button variant="premium" size="xl" className="hover-glow">
-              <Calendar className="h-5 w-5" />
-              Book Your Appointment
-            </Button>
             <Button variant="hero" size="xl">
-              Explore Services
+              <Calendar className="h-4 w-4 text-yellow-400" />
+              Book Your Appointment
               <ArrowRight className="h-5 w-5" />
             </Button>
+
           </div>
 
           {/* Quick Stats */}

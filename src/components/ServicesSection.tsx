@@ -1,5 +1,6 @@
 import { Clock, DollarSign } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 import haircutImage from "@/assets/service-haircut.jpg";
 import beardImage from "@/assets/service-beard.jpg";
 import shaveImage from "@/assets/service-shave.jpg";
@@ -32,6 +33,24 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const navigate = useNavigate();
+
+  const handleServiceClick = (serviceId: number) => {
+    switch (serviceId) {
+      case 1:
+        navigate('/signature-haircut');
+        break;
+      case 2:
+        navigate('/beard-grooming');
+        break;
+      case 3:
+        navigate('/royal-shave');
+        break;
+      default:
+        break;
+    }
+  };
+
   return (
     <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-6">
@@ -80,7 +99,11 @@ const ServicesSection = () => {
                   </div>
                 </div>
 
-                <Button className="w-full" variant="outline">
+                <Button
+                  className="w-full"
+                  variant="outline"
+                  onClick={() => handleServiceClick(service.id)}
+                >
                   Book This Service
                 </Button>
               </div>
